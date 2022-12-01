@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+        crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+    <script src="script/coordinates.js"></script>
+    <script type="module" src="script/teste.js"></script>
+    <script src="script/fibonacci.js"></script>
+
+    <!-- <script type="text/javascript" src="files/coordinates.json"></script> -->
+
+    <title>Document</title>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow">
+        <div class="container-xxl">
+            <a class="navbar-brand" href="#">Coordinates</a>
+        </div>
+        <div id="datetime" class="me-3"></div>
+    </nav>
+
+    <div class="container-xxl my-4">
+
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="coordinates-tab" data-bs-toggle="tab" data-bs-target="#std_coordinates" type="button" role="tab" aria-controls="std_coordinates" aria-selected="true">Coordenadas</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="teste-tab" data-bs-toggle="tab" data-bs-target="#teste" type="button" role="tab" aria-controls="teste" aria-selected="false">Testes</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="view-tab" data-bs-toggle="tab" data-bs-target="#std_view" type="button" role="tab" aria-controls="std_view" aria-selected="false">View JS</button>
+            </li>
+        </ul>
+
+        <div class="tab-content my-5" id="myTabContent">
+            <div class="tab-pane fade show active" id="std_coordinates" role="tabpanel" aria-labelledby="coordinates-tab">
+                <button class="btn btn-primary" onclick="show()">Create Coordinates</button>
+                <button class="btn btn-danger" onclick="clearElement()">Delete Coordinates</button>
+                <button class="btn btn-success" onclick="setStorage()">Set Storage</button>
+                <button class="btn btn-warning" onclick="clearStorage()">Clear Storage</button>
+                <button class="btn btn-outline-info" onclick="test()">teste</button>
+                
+                <ul class="list-group my-4" id="objectList"></ul>
+
+                <table class="table table-striped">
+                    <thead>
+                        <th>Coordenadas X</th>
+                        <th>Coordenadas Y</th>
+                    </thead>
+                    <tbody id="table">
+                    </tbody>
+                </table> 
+            </div>
+            <div class="tab-pane fade " id="teste" role="tabpanel" aria-labelledby="teste-tab">
+                <div class="row my-3">
+                    <label for="num" class="col-md-2 col-form-label">Insira a quantidade:</label>
+                    <div class="col-md-1">
+                        <input type="number" step="0" id="num" class="form-control">
+                    </div>
+                    <button onclick="printFibonacci()" class="btn btn-primary col me-3">Listar</button>
+                    <button onclick="deleteFibonacci()" class="btn btn-outline-danger col me-3">Deletar</button>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <table class="table table-striped my-4">
+                            <thead>
+                                <th>Índice</th>
+                                <th>Número Fibonacci</th>
+                            </thead>
+                            <tbody id="tableFibonacci">
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-md-6"></div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="std_view" role="tabpanel" aria-labelledby="view-tab">
+                
+            </div>
+        </div>
+
+    </div>
+
+    
+    <!-- React -->
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+
+    <script src="https://unpkg.com/@mui/material@latest/umd/material-ui.development.js"></script>
+    
+    <!-- Adicione nosso componente React. -->
+    <script src="react\components\like_button.js"></script>
+
+</body>
+
+
+
+</html>
